@@ -1,0 +1,4431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Teacher_Interactive_Interface</class>
+ <widget class="QMainWindow" name="Teacher_Interactive_Interface">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1350</width>
+    <height>802</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1350</width>
+    <height>750</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Giảng viên</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/background.jpg</normaloff>:/background.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMenu
+{
+	background-color: rgb(147, 220, 220);
+	color : black;
+	font: 8pt &quot;Courier&quot;;
+}
+
+QMenu::item
+{
+	background-color : rgb(186, 186, 139);
+	border : 1px solid rgb(255, 255, 255);
+	font: 8pt &quot;Courier&quot;;
+	padding : 2px 2px 2px 2px;
+	border-radius : 4px;
+}
+QMenu::item:selected
+{
+	border : 1px groove rgb(106, 106, 106);
+	background-color: rgb(255, 170, 0);
+}
+QMenu::item:pressed
+{
+	border : 1px groove rgb(106, 106, 106);
+	background-color: rgb(255, 170, 0);
+}
+QMenuBar
+{
+	background-color: rgb(147, 220, 220);
+	font: 12pt &quot;Courier&quot;;
+	padding-left: 8px;
+	padding-top : 4px;
+	color : black;
+}
+QMenuBar::item
+{
+	background-color: white;
+	font: 12pt &quot;Courier&quot;;
+	border : 2px solid rgb(255, 170, 0);
+	border-radius : 6px;
+	padding : 2px 4px 2px 4px;
+}
+QMenuBar::item:selected
+{
+	background-color:rgb(255, 170, 0);
+	font: 12pt &quot;Courier&quot;;
+	border : 2px solid rgb(104, 104, 104);
+}
+QMenuBar::item:pressed
+{
+	background-color:rgb(255, 170, 0);
+	font: 12pt &quot;Courier&quot;;
+	border : 1px solid rgb(104, 104, 104);
+};
+font : 8pt &quot;Courier&quot;;
+background-color: rgb(147, 220, 220);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QWidget" name="horizontalWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>650</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab
+{
+	background-color: rgb(104, 156, 156);
+	bottom : -1px;
+	height : 20px;
+	width:190px;
+	border-top-left-radius : 10px;
+	border-top-right-radius : 10px;
+	border : 2px groove  rgb(170, 170, 127);
+	outline : 0px;
+}
+QTabBar::tab::hover
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(255, 170, 0);
+}
+QTabBar::tab:selected
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(134, 89, 0);
+	font : 8pt Courier;
+}</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="verticalWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>820</width>
+           <height>600</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>820</width>
+           <height>600</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 20px 0 20px;
+	border-radius :0px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(170, 170, 127);
+	border-radius : 7px;
+}
+QScrollBar::handle:horizontal:hover
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+QScrollBar::handle:horizontal:pressed
+{
+	border : none;
+	background-color: rgb(255, 85, 0);
+	border-radius : 7px;
+}
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 20px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 7px;
+	border-bottom-left-radius : 7px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 20px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 7px;
+	border-bottom-right-radius : 7px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QTabWidget" name="tabWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>820</width>
+              <height>550</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>820</width>
+              <height>550</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-style : solid;
+border-width : 1px 1px 1px 1px;
+
+</string>
+            </property>
+            <property name="tabShape">
+             <enum>QTabWidget::Rounded</enum>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <property name="elideMode">
+             <enum>Qt::ElideNone</enum>
+            </property>
+            <property name="tabsClosable">
+             <bool>false</bool>
+            </property>
+            <property name="movable">
+             <bool>false</bool>
+            </property>
+            <widget class="QWidget" name="tab_information">
+             <attribute name="icon">
+              <iconset resource="image.qrc">
+               <normaloff>:/icon-file/information_icon.png</normaloff>:/icon-file/information_icon.png</iconset>
+             </attribute>
+             <attribute name="title">
+              <string>Thông tin cá nhân</string>
+             </attribute>
+             <widget class="QWidget" name="horizontalWidget" native="true">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>820</width>
+                <height>520</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>820</width>
+                <height>520</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>820</width>
+                <height>500</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border : none;
+background-color: white;</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QWidget" name="verticalWidget" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>120</width>
+                      <height>150</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>120</width>
+                      <height>150</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : 1px solid;
+border-radius :40px solid;</string>
+                    </property>
+                    <property name="text">
+                     <string>Ảnh đại diện</string>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>300</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QWidget" name="verticalWidget_2" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>650</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-bottom:1px solid;</string>
+                    </property>
+                    <property name="text">
+                     <string>Thông tin cá nhân và trình độ</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item alignment="Qt::AlignLeft">
+                   <widget class="QWidget" name="horizontalWidget_2" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <property name="bottomMargin">
+                      <number>1</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_6">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>10</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QWidget" name="widget" native="true">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_3">
+                        <item>
+                         <widget class="QLabel" name="label_name">
+                          <property name="text">
+                           <string>Họ tên : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_sex">
+                          <property name="text">
+                           <string>Giới tính : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_phonenumber">
+                          <property name="text">
+                           <string>Số điện thoại : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_email">
+                          <property name="minimumSize">
+                           <size>
+                            <width>450</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>Email : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_datebirth">
+                          <property name="text">
+                           <string>Ngày sinh : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_identitycard">
+                          <property name="text">
+                           <string>Căn cước công dân : </string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item alignment="Qt::AlignLeft">
+                   <widget class="QWidget" name="horizontalWidget_3" native="true">
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <property name="bottomMargin">
+                      <number>1</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_5">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>10</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QWidget" name="widget" native="true">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_5">
+                        <item>
+                         <widget class="QLabel" name="label_id">
+                          <property name="text">
+                           <string>Mã giáo viên : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_profess">
+                          <property name="minimumSize">
+                           <size>
+                            <width>550</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>Chuyên ngành dạy : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_khoa">
+                          <property name="text">
+                           <string>Khoa :</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_address">
+                          <property name="text">
+                           <string>Địa chỉ  : </string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_ethnic">
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_placeofbirth">
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="tab_quanlysinhvien">
+             <attribute name="icon">
+              <iconset resource="image.qrc">
+               <normaloff>:/icon-file/student_icon.png</normaloff>:/icon-file/student_icon.png</iconset>
+             </attribute>
+             <attribute name="title">
+              <string>Quản Lý Sinh Viên</string>
+             </attribute>
+             <widget class="QTableView" name="tableView">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>812</width>
+                <height>519</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>519</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>519</height>
+               </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 0px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="defaultDropAction">
+               <enum>Qt::MoveAction</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="verticalHeaderHighlightSections">
+               <bool>true</bool>
+              </attribute>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="tab_resStudent">
+             <attribute name="icon">
+              <iconset resource="image.qrc">
+               <normaloff>:/icon-file/list_stu.png</normaloff>:/icon-file/list_stu.png</iconset>
+             </attribute>
+             <attribute name="title">
+              <string>Danh sách sinh viên</string>
+             </attribute>
+             <widget class="QTableView" name="tableView_ResStu">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>812</width>
+                <height>519</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>519</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>519</height>
+               </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 0px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="tab_lichgiangday">
+             <attribute name="icon">
+              <iconset resource="image.qrc">
+               <normaloff>:/icon-file/schedule_icon.png</normaloff>:/icon-file/schedule_icon.png</iconset>
+             </attribute>
+             <attribute name="title">
+              <string>Lịch Giảng Dạy</string>
+             </attribute>
+             <widget class="QWidget" name="widget_calendar" native="true">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>781</width>
+                <height>491</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+
+QLabel#label_m2,#label_n2,#label_ni2,#label_m3,#label_n3,#label_ni3,#label_m4,#label_n4,#label_ni4,#label_m5,#label_n5,#label_ni5,#label_m6,#label_n6,#label_ni6,#label_m7,#label_n7,#label_ni7,#label_m8,#label_n8,#label_ni8 {border : none};
+background-color : white;</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <layout class="QGridLayout" name="gridLayout">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
+                 <item row="2" column="3">
+                  <widget class="QLabel" name="label_m3">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QLabel" name="label_t5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QLabel" name="label_day3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>11-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="7">
+                  <widget class="QLabel" name="label_m7">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLabel" name="label_m2">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QLabel" name="label_m5">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="8">
+                  <widget class="QLabel" name="label_ni8">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="6">
+                  <widget class="QLabel" name="label_day6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>14-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QLabel" name="label_ni2">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" alignment="Qt::AlignHCenter">
+                  <widget class="QLabel" name="label_4">
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Ca Dạy</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="8">
+                  <widget class="QLabel" name="label_m8">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <spacer name="horizontalSpacer_8">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>10</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLabel" name="label_n5">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QLabel" name="label_day4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>12-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QLabel" name="label_n3">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="label_t3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 3</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QLabel" name="label_n4">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLabel" name="label_t4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 4</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                  <widget class="QLabel" name="label_6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>120</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color: rgb(182, 182, 136);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>TỐI</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2" alignment="Qt::AlignHCenter">
+                  <widget class="QLabel" name="label_t2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QLabel" name="label_n2">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="7">
+                  <widget class="QLabel" name="label_day7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>15-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="7">
+                  <widget class="QLabel" name="label_ni7">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                  <widget class="QLabel" name="label_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>125</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color: rgb(182, 182, 136);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>SÁNG</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="6">
+                  <widget class="QLabel" name="label_n6">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QLabel" name="label_day5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>13-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="label_day2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>10-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="6">
+                  <widget class="QLabel" name="label_m6">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="4">
+                  <widget class="QLabel" name="label_ni4">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="6">
+                  <widget class="QLabel" name="label_t6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 6</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QLabel" name="label_m4">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="5">
+                  <widget class="QLabel" name="label_ni5">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="6">
+                  <widget class="QLabel" name="label_ni6">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="8">
+                  <widget class="QLabel" name="label_t8">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>94</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+border-radius : 5px;
+background-color: rgb(255, 170, 0);</string>
+                   </property>
+                   <property name="text">
+                    <string>  Chủ nhật</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="8">
+                  <widget class="QLabel" name="label_n8">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="8">
+                  <widget class="QLabel" name="label_day8">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>92</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color : #f3f7f9;
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>16-05-2021</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="7">
+                  <widget class="QLabel" name="label_t7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>105</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : none;
+background-color: rgb(255, 170, 0);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>   Thứ 7</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="7">
+                  <widget class="QLabel" name="label_n7">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3">
+                  <widget class="QLabel" name="label_ni3">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>125</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border : 1px solid;
+background-color: rgb(182, 182, 136);
+border-radius : 5px;</string>
+                   </property>
+                   <property name="text">
+                    <string>TRƯA</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QWidget" name="widget_2" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_4">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>84</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;</string>
+                    </property>
+                    <property name="text">
+                     <string>Lịch</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/calendar_icon_animated.gif</normaloff>:/calendar_icon_animated.gif</iconset>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_5">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;</string>
+                    </property>
+                    <property name="text">
+                     <string>Trở lại</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/previous-standard.png</normaloff>:/previous-standard.png</iconset>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_6">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>84</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px</string>
+                    </property>
+                    <property name="text">
+                     <string>Hiện tại</string>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_7">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>84</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="layoutDirection">
+                     <enum>Qt::RightToLeft</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>false</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;
+
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Tiếp</string>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/next_standard.png</normaloff>:/next_standard.png</iconset>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border-style : groove;
+border-width : 1px;
+border-radius : 6px;
+padding : 2px;
+background-color :  rgb(255, 170, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string> Mã học phần : S, Phòng học : P </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_12">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>10</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item alignment="Qt::AlignRight">
+                <widget class="QPushButton" name="pushButton_15">
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;</string>
+                 </property>
+                 <property name="text">
+                  <string>In lịch dạy</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>:/schedule_icon.png</normaloff>:/schedule_icon.png</iconset>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+            <widget class="QWidget" name="tab_courseProposal">
+             <attribute name="icon">
+              <iconset resource="image.qrc">
+               <normaloff>:/icon-file/list_mark.png</normaloff>:/icon-file/list_mark.png</iconset>
+             </attribute>
+             <attribute name="title">
+              <string>Đề xuất lịch dạy</string>
+             </attribute>
+             <widget class="QTableView" name="tableView_2">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>821</width>
+                <height>521</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>821</width>
+                <height>521</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border : none</string>
+              </property>
+             </widget>
+             <widget class="QCalendarWidget" name="calendarWidget">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>371</width>
+                <height>211</height>
+               </rect>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QCalendarWidget{
+	background-color : rgb(255, 255, 206);color : black;
+}
+QCalendarWidget QToolButton
+{
+	width:70;background-color:rgb(255, 170, 0);color:black;border-radius:4px;
+}
+QCalendarWidget QToolButton:pressed{
+	background-color:rgb(255, 170, 0);color:black;border : 2px solid rgb(68, 68, 			68);
+}
+QCalendarWidget QToolButton:hover{
+	background-color:rgb(255, 170, 0);color:black;border : 2px solid rgb(68, 68, 			68);
+}
+QCalendarWidget QSpinBox::up-button{
+	subcontrol-origin: border;subcontrol-position: top right;  width:20px; 
+}
+QCalendarWidget QSpinBox::down-button{
+	subcontrol-origin: border;subcontrol-position: bottom right;  width:20px;
+}
+QCalendarWidget QSpinBox::up-arrow{
+	width:10px;height:10px;
+}
+QCalendarWidget QSpinBox::down-arrow{
+	width:10px;height:10px;
+}
+QCalendarWidget QMenu{
+	background-color:white;selection-background-color:rgb(255, 170, 0);color:black;selection-color:black;
+}
+QCalendarWidget QAbstractItemView:enabled{
+	selection-background-color:rgb(255, 170, 0);outline:0px;color:black;
+}</string>
+              </property>
+             </widget>
+             <widget class="QTableView" name="tableView_listCourse">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>270</y>
+                <width>541</width>
+                <height>231</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+             <widget class="QLabel" name="label_12">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>250</y>
+                <width>251</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+              </property>
+              <property name="text">
+               <string>Danh sách các học phần đề xuất</string>
+              </property>
+             </widget>
+             <widget class="QWidget" name="widget" native="true">
+              <property name="geometry">
+               <rect>
+                <x>410</x>
+                <y>10</y>
+                <width>391</width>
+                <height>211</height>
+               </rect>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{border : none;
+background-color: rgb(255, 170, 0);}</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_11">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mã học phần&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ngày bắt đầu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_14">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ngày kết thúc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ngày thi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_16">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Học kì&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_17">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Số lượng&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_24">
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Số tín chỉ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_courseId">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::StrongFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_dateStart">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::ClickFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_dateEnd">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::ClickFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_dateTest">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::ClickFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                    <property name="clearButtonEnabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_semester">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::StrongFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_quantity">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::StrongFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_numRes">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	background-color: none;
+	padding-left :20px;
+	border : 1px solid;
+	border-radius : 4px;
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_createCourse">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>105</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>105</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 150px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Tạo học phần</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="widget" native="true">
+              <property name="geometry">
+               <rect>
+                <x>593</x>
+                <y>220</y>
+                <width>191</width>
+                <height>291</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{border : none;
+background-color: rgb(255, 170, 0);}
+QLineEdit{background-color: none;padding-left :20px;border : 1px solid;border-radius : 4px;}
+QLineEdit:hover{border : 1px solid rgb(255, 170, 0);}
+QLineEdit:focus{border : 1px solid rgb(255, 170, 0);}
+QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 150px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+
+</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <item>
+                <widget class="QLabel" name="label_23">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Năm học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QComboBox" name="comboBox_ye">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_22">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mã học phần&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QComboBox" name="comboBox_courseId">
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_19">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ngày học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_dateStu">
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_20">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Phòng học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QLineEdit" name="lineEdit_class">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>80</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_21">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ca học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_sang">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>51</width>
+                     <height>18</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::ClickFocus</enum>
+                   </property>
+                   <property name="text">
+                    <string>Sáng</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_trua">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>53</width>
+                     <height>18</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::ClickFocus</enum>
+                   </property>
+                   <property name="text">
+                    <string>Trưa</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_toi">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>53</width>
+                     <height>18</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::ClickFocus</enum>
+                   </property>
+                   <property name="text">
+                    <string>Tối</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item alignment="Qt::AlignHCenter">
+                <widget class="QPushButton" name="pushButton_createDay">
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="text">
+                  <string>Tạo ngày học</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="horizontalWidget_4" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 150px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="spacing">
+              <number>6</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>160</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Thông tin cá nhân</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/information_icon.png</normaloff>:/icon-file/information_icon.png</iconset>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_14">
+               <property name="minimumSize">
+                <size>
+                 <width>170</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Cập nhật thông tin</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/updated_standard.png</normaloff>:/icon-file/updated_standard.png</iconset>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Quản lý sinh viên</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/student_icon.png</normaloff>:/icon-file/student_icon.png</iconset>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Lịch giảng dạy</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/schedule_icon.png</normaloff>:/icon-file/schedule_icon.png</iconset>
+               </property>
+               <property name="autoDefault">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_8">
+               <property name="minimumSize">
+                <size>
+                 <width>10</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>140</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Sinh viên</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/list_stu.png</normaloff>:/icon-file/list_stu.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_no" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>457</width>
+           <height>600</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="horizontalWidget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 170, 0);</string>
+            </property>
+            <property name="text">
+             <string>.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>5</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_edit" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 150px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="pushButton_11">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Cập nhật</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/updateinformation_icon.png</normaloff>:/icon-file/updateinformation_icon.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_10">
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Thêm</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/addMark_icon.png</normaloff>:/icon-file/addMark_icon.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_9">
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Xóa</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/deleteMark_icon.png</normaloff>:/icon-file/deleteMark_icon.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_12">
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>In</string>
+               </property>
+               <property name="icon">
+                <iconset resource="image.qrc">
+                 <normaloff>:/icon-file/printer.png</normaloff>:/icon-file/printer.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>10</width>
+              <height>7</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_13">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>90</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 100px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Bộ lọc</string>
+            </property>
+            <property name="icon">
+             <iconset resource="image.qrc">
+              <normaloff>:/icon-file/filter.png</normaloff>:/icon-file/filter.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>7</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="horizontalWidget_hide" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+	border : 1px solid rgb(84, 84, 84);
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Năm học : </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_year">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_13">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>10</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Lớp : </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_class">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>10</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>7</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="horizontalWidget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	height : 25px;
+	width : 150px;
+	border-radius : 8px;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+	outline : 0px;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0px;
+}</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QComboBox" name="comboBox_op">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>155</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+	border : 1px solid rgb(84, 84, 84);
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+
+
+
+</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Mã sinh viên</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Lớp</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Năm học</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Điểm cuối kì</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Điểm tổng kết</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Thang điểm 4</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_TC">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Thấp -&gt; cao</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_CT">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="text">
+                <string>Cao -&gt; thấp</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+            </property>
+            <property name="text">
+             <string>Thời khóa biều đề xuất</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableView" name="tableView_ScheduleCourse">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>400</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_9">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1350</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuL_a_ch_n">
+    <property name="title">
+     <string>Lựa chọn</string>
+    </property>
+    <addaction name="actionTh_ng_tin_c_c_nh_n"/>
+    <addaction name="actionC_p_nh_t_th_ng_tin_c_nh_n"/>
+    <addaction name="actionL_ch_gi_ng_d_y"/>
+    <addaction name="actionL_ch_thi"/>
+    <addaction name="action_i_m_t_kh_u"/>
+    <addaction name="actionCh_nh_s_a_i_m"/>
+    <addaction name="actionQu_n_l_sinh_vi_n"/>
+    <addaction name="actionDanh_s_ch_sinh_vi_n"/>
+    <addaction name="actionX_a_i_m_sinh_vi_n"/>
+    <addaction name="actionTh_m_i_m_cho_sinh_vi_n"/>
+    <addaction name="actionKh_i_ng_l_i"/>
+    <addaction name="action_ng_xu_t"/>
+    <addaction name="actionTho_t"/>
+   </widget>
+   <addaction name="menuL_a_ch_n"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar
+{
+	border : none;
+	background-color: rgb(147, 220, 220);
+}
+QToolBar::handle
+{
+	width : 6px;
+	border-top-right-radius : 10px;
+	border-bottom-right-radius : 10px;
+	background-color: rgb(255, 170, 0);
+	border : 2px groove rgb(255, 170, 0);
+}
+QToolButton:hover
+{
+	border : 1px solid rgb(94, 94, 94);
+	background-color: rgb(255, 170, 0);
+	border-radius :5px;
+}
+QToolButton:pressed
+{
+	border : 1px solid rgb(94, 94, 94);
+	background-color: rgb(255, 170, 0);
+	border-radius :5px;
+}</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTh_ng_tin_c_c_nh_n"/>
+   <addaction name="actionC_p_nh_t_th_ng_tin_c_nh_n"/>
+   <addaction name="actionQu_n_l_sinh_vi_n"/>
+   <addaction name="actionDanh_s_ch_sinh_vi_n"/>
+   <addaction name="action_xu_t_h_c_ph_n"/>
+   <addaction name="actionL_ch_gi_ng_d_y"/>
+   <addaction name="actionL_ch_thi"/>
+   <addaction name="action_i_m_t_kh_u"/>
+   <addaction name="actionCh_nh_s_a_i_m"/>
+   <addaction name="actionTh_m_i_m_cho_sinh_vi_n"/>
+   <addaction name="actionX_a_i_m_sinh_vi_n"/>
+   <addaction name="actionTho_t"/>
+   <addaction name="action_ng_xu_t"/>
+  </widget>
+  <action name="actionTh_ng_tin_c_c_nh_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/information_icon.png</normaloff>:/icon-file/information_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thông tin các nhân</string>
+   </property>
+  </action>
+  <action name="actionC_p_nh_t_th_ng_tin_c_nh_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/updated_standard.png</normaloff>:/icon-file/updated_standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cập nhật thông tin cá nhân</string>
+   </property>
+  </action>
+  <action name="actionL_ch_gi_ng_d_y">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/schedule_icon.png</normaloff>:/icon-file/schedule_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Lịch giảng dạy</string>
+   </property>
+  </action>
+  <action name="action_i_m_t_kh_u">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/resetpassword.png</normaloff>:/icon-file/resetpassword.png</iconset>
+   </property>
+   <property name="text">
+    <string>Đổi mật khẩu</string>
+   </property>
+  </action>
+  <action name="actionQu_n_l_sinh_vi_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/student_icon.png</normaloff>:/icon-file/student_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quản lý sinh viên</string>
+   </property>
+  </action>
+  <action name="actionTh_m_i_m_cho_sinh_vi_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/addMark_icon.png</normaloff>:/icon-file/addMark_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thêm điểm sinh viên</string>
+   </property>
+   <property name="toolTip">
+    <string>Thêm điểm  sinh viên</string>
+   </property>
+  </action>
+  <action name="actionX_a_i_m_sinh_vi_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/deleteMark_icon.png</normaloff>:/icon-file/deleteMark_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Xóa điểm sinh viên</string>
+   </property>
+  </action>
+  <action name="actionTho_t">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/remove-button-standard.png</normaloff>:/icon-file/remove-button-standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thoát</string>
+   </property>
+  </action>
+  <action name="actionCh_nh_s_a_i_m">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/updateinformation_icon.png</normaloff>:/icon-file/updateinformation_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Chỉnh sửa điểm</string>
+   </property>
+  </action>
+  <action name="actionDanh_s_ch_sinh_vi_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/list_mark.png</normaloff>:/icon-file/list_mark.png</iconset>
+   </property>
+   <property name="text">
+    <string>Danh sách sinh viên</string>
+   </property>
+   <property name="toolTip">
+    <string>Danh sách sinh viên</string>
+   </property>
+  </action>
+  <action name="actionL_ch_thi">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/test_calendar.png</normaloff>:/icon-file/test_calendar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Lịch thi</string>
+   </property>
+  </action>
+  <action name="action_ng_xu_t">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/logout-standard.png</normaloff>:/icon-file/logout-standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Đăng xuất</string>
+   </property>
+   <property name="toolTip">
+    <string>Đăng xuất</string>
+   </property>
+  </action>
+  <action name="action_xu_t_h_c_ph_n">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/course_icon.png</normaloff>:/icon-file/course_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Đề xuất học phần</string>
+   </property>
+  </action>
+  <action name="actionKh_i_ng_l_i">
+   <property name="icon">
+    <iconset resource="image.qrc">
+     <normaloff>:/icon-file/restart_icon.png</normaloff>:/icon-file/restart_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Khởi động lại</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
