@@ -1,0 +1,47 @@
+hàm con trỏ:
+example : void (*func)()
+
+void hienThi(){cout<<"Duy Khan";}
+-> void (*HIENTHI)() = hienThi;
+->exec : HIENTHI();
+
+lamda C++;
+[](){cout<<"Call my name\n";}
+auto y = [](int a,int b){return a + b;}
+auto x = [](int a, int b){return a+b;}(5,6);
+exec : y(2,3)
+
+#include<funtional>
+funtion<int(int,int)> a = [](int a, int b){return a + b;}
+exec : a(3,4)
+
+int i =3,j=4;
+funtion<int(void)> f = [i,&j]{return i + j;} // giá trị i sẽ không thay đổi nhưng j sẽ thay đổi vì &
+change i,j : i=22,j=44;
+f()->=47
+
+int n =[](int x, int y){return x%y;}(5,4);
+cout<<n;
+
+///algorithm
+void change(int &a){a = 8;)
+for_each(arr, arr+9,change);
+for_each(arr, arr+9,[](int &a){ a =8;};
+for(auto &a : arr){a = 9;}
+for(auto& i :arr)[](int &a){a=0;}(i);
+
+function<void(int& a)> ff =[](int& a){a= 4;};
+auto f = [](int &a){a = 0;};
+int arr[]={1,5,6,3,2,0,9};
+for(auto& i :arr)ff(i);
+for(auto& i :arr)f(i);
+
+auto ff = [](int &a){a = 0;};
+int arr[]={1,5,6,3,2,0,9};
+for_each(arr,arr+7,ff);
+for_each(arr,arr+7,[](int a){cout<<a<<" ";});
+
+function<void(int& a)> ff =[](int& a){a= 4;};
+int arr[]={1,5,6,3,2,0,9};
+for_each(arr,arr+7,ff);
+for_each(arr,arr+7,[](int a){cout<<a<<" ";});

@@ -1,0 +1,3997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Student_Interactive_Interface</class>
+ <widget class="QMainWindow" name="Student_Interactive_Interface">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1350</width>
+    <height>850</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1350</width>
+    <height>850</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Courier</family>
+    <pointsize>8</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Quản lý</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../projectQt5/image.qrc">
+    <normaloff>:/icon-file/icons8-student-center-100.png</normaloff>:/icon-file/icons8-student-center-100.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMenu
+{
+	background-color: white;
+	color : black;
+	font: 8pt &quot;Courier&quot;;
+	border-radius:5px
+}
+QMenu::item
+{
+	background-color : rgb(186, 186, 139);
+	border : 1px solid rgb(255, 255, 255);
+	font: 8pt &quot;Courier&quot;;
+	padding : 2px 2px 2px 2px;
+	border-radius : 4px;
+}
+QMenu::item:selected
+{
+	border : 1px groove rgb(106, 106, 106);
+	background-color: rgb(255, 170, 0);
+}
+QMenu::item:pressed
+{
+	border : 1px groove rgb(106, 106, 106);
+	background-color: rgb(255, 170, 0);
+}
+QMenuBar
+{
+	background-color: rgb(147, 220, 220);
+	font: 12pt &quot;Courier&quot;;
+	padding-left: 8px;
+	padding-top : 4px;
+	color : black;
+}
+QMenuBar::item
+{
+	background-color: white;
+	font: 12pt &quot;Courier&quot;;
+	border : 2px solid rgb(255, 170, 0);
+	border-radius : 6px;
+	padding : 2px 4px 2px 4px;
+}
+QMenuBar::item:selected
+{
+	background-color:rgb(255, 170, 0);
+	font: 12pt &quot;Courier&quot;;
+	border : 2px solid rgb(104, 104, 104);
+}
+QMenuBar::item:pressed
+{
+	background-color:rgb(255, 170, 0);
+	font: 12pt &quot;Courier&quot;;
+	border : 1px solid rgb(104, 104, 104);
+}</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 8pt &quot;Courier&quot;; background-color: rgb(147, 220, 220);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <spacer name="verticalSpacer_7">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>5</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::StrongFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTabBar::tab
+{
+	background-color: rgb(104, 156, 156);
+	bottom : -1px;
+	height : 25px;
+	border-top-left-radius : 10px;
+	border-top-right-radius : 10px;
+	border : 2px groove  rgb(170, 170, 127);
+	outline : 0px;
+	width : 200px;
+}
+QTabBar::tab::hover
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(255, 170, 0);
+}
+QTabBar::tab:selected
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(134, 89, 0);
+	font: 8pt &quot;Courier&quot;;
+}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	outline : 0;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0;
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:4px groove rgb(162, 108, 0);
+	outline : 0;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:4px groove rgb(162, 108, 0);
+	outline : 0;
+}
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 20px 0 20px;
+	border-radius :0px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(170, 170, 127);
+	border-radius : 7px;
+}
+QScrollBar::handle:horizontal:hover
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+QScrollBar::handle:horizontal:pressed
+{
+	border : none;
+	background-color: rgb(255, 85, 0);
+	border-radius : 7px;
+}
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 20px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 7px;
+	border-bottom-left-radius : 7px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 20px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 7px;
+	border-bottom-right-radius : 7px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+
+</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <item>
+              <widget class="QTabWidget" name="tabWidget">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>880</width>
+                 <height>550</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Courier</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-style : solid;
+border-width : 1px 1px 1px 1px;
+
+</string>
+               </property>
+               <property name="tabPosition">
+                <enum>QTabWidget::North</enum>
+               </property>
+               <property name="tabShape">
+                <enum>QTabWidget::Rounded</enum>
+               </property>
+               <property name="currentIndex">
+                <number>2</number>
+               </property>
+               <property name="elideMode">
+                <enum>Qt::ElideNone</enum>
+               </property>
+               <property name="documentMode">
+                <bool>false</bool>
+               </property>
+               <property name="tabsClosable">
+                <bool>false</bool>
+               </property>
+               <property name="movable">
+                <bool>false</bool>
+               </property>
+               <property name="tabBarAutoHide">
+                <bool>false</bool>
+               </property>
+               <widget class="QWidget" name="tab_teacher">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <attribute name="icon">
+                 <iconset resource="../projectQt5/image.qrc">
+                  <normaloff>:/icon-file/icons8-student-center-100.png</normaloff>:/icon-file/icons8-student-center-100.png</iconset>
+                </attribute>
+                <attribute name="title">
+                 <string>Quản lý giảng viên</string>
+                </attribute>
+                <widget class="QTableView" name="tableView_teacher">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>872</width>
+                   <height>515</height>
+                  </rect>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>872</width>
+                   <height>515</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::CustomContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 0px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Sunken</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="dragEnabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <property name="gridStyle">
+                  <enum>Qt::SolidLine</enum>
+                 </property>
+                 <property name="sortingEnabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="tab_student">
+                <attribute name="icon">
+                 <iconset resource="../projectQt5/image.qrc">
+                  <normaloff>:/icon-file/student_icon.png</normaloff>:/icon-file/student_icon.png</iconset>
+                </attribute>
+                <attribute name="title">
+                 <string>Quản lý sinh viên</string>
+                </attribute>
+                <widget class="QTableView" name="tableView_student">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>872</width>
+                   <height>515</height>
+                  </rect>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>872</width>
+                   <height>515</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>870</width>
+                   <height>515</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::CustomContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 0px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <property name="sortingEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="tab_registerCourse_">
+                <attribute name="icon">
+                 <iconset resource="../projectQt5/image.qrc">
+                  <normaloff>:/icon-file/regis_standard.png</normaloff>:/icon-file/regis_standard.png</iconset>
+                </attribute>
+                <attribute name="title">
+                 <string>Quản lý học phần</string>
+                </attribute>
+                <widget class="QWidget" name="verticalLayoutWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>0</y>
+                   <width>721</width>
+                   <height>281</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_15">
+                  <item>
+                   <widget class="QLabel" name="label_5">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Danh sách các học phần chờ duyệt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QTableView" name="tableView_registerCourse">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>700</width>
+                      <height>240</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>659</width>
+                      <height>240</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="contextMenuPolicy">
+                     <enum>Qt::CustomContextMenu</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>true</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
+                    </property>
+                    <property name="horizontalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
+                    </property>
+                    <property name="sizeAdjustPolicy">
+                     <enum>QAbstractScrollArea::AdjustToContents</enum>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                    </property>
+                    <property name="alternatingRowColors">
+                     <bool>false</bool>
+                    </property>
+                    <property name="selectionMode">
+                     <enum>QAbstractItemView::SingleSelection</enum>
+                    </property>
+                    <property name="selectionBehavior">
+                     <enum>QAbstractItemView::SelectRows</enum>
+                    </property>
+                    <property name="gridStyle">
+                     <enum>Qt::SolidLine</enum>
+                    </property>
+                    <property name="sortingEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QPushButton" name="pushButton_regis">
+                 <property name="geometry">
+                  <rect>
+                   <x>750</x>
+                   <y>140</y>
+                   <width>101</width>
+                   <height>30</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>101</width>
+                   <height>22</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>70</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton
+{
+	background-color:rgb(255, 255, 255);
+	border-style : solid;
+	border-width : 1px;
+	border-radius : 6px;
+	padding : 2px;
+	border : 1px solid rgb(255, 170, 0);
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px solid rgb(68, 68, 68);
+	outline : 0;
+}
+QPushButton:pressed
+{
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Duyệt</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_cancelRegis">
+                 <property name="geometry">
+                  <rect>
+                   <x>750</x>
+                   <y>390</y>
+                   <width>101</width>
+                   <height>30</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>101</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton
+{
+	background-color:rgb(255, 255, 255);
+	border-style : solid;
+	border-width : 1px;
+	border-radius : 6px;
+	padding : 2px;
+	border : 1px solid rgb(255, 170, 0);
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px solid rgb(68, 68, 68);
+	outline : 0;
+}
+QPushButton:pressed
+{
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Hủy duyệt</string>
+                 </property>
+                </widget>
+                <widget class="QWidget" name="verticalLayoutWidget_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>280</y>
+                   <width>721</width>
+                   <height>236</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                  <item>
+                   <widget class="QLabel" name="label_7">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">border : none;
+background-color: rgb(255, 170, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Các học phần đã duyệt thành công</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QTableView" name="tableView_registeredCourse">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>550</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>700</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="autoFillBackground">
+                     <bool>true</bool>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                    </property>
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
+                    </property>
+                    <property name="horizontalScrollBarPolicy">
+                     <enum>Qt::ScrollBarAsNeeded</enum>
+                    </property>
+                    <property name="sizeAdjustPolicy">
+                     <enum>QAbstractScrollArea::AdjustToContents</enum>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::NoEditTriggers</set>
+                    </property>
+                    <property name="selectionMode">
+                     <enum>QAbstractItemView::SingleSelection</enum>
+                    </property>
+                    <property name="selectionBehavior">
+                     <enum>QAbstractItemView::SelectRows</enum>
+                    </property>
+                    <property name="sortingEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="verticalLayoutWidget_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>750</x>
+                   <y>10</y>
+                   <width>92</width>
+                   <height>80</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item alignment="Qt::AlignHCenter">
+                   <widget class="QLabel" name="label_8">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 170, 0);
+border-style : groove;
+border-width : 1px;
+border-radius : 6px;
+padding : 2px;
+border:2px groove rgb(68, 68, 68);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Học kì</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>90</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>90</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="tab_learnSchedule">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <attribute name="icon">
+                 <iconset>
+                  <normaloff>:/icon-file/debtandstudent.png</normaloff>:/icon-file/debtandstudent.png</iconset>
+                </attribute>
+                <attribute name="title">
+                 <string>Học phần và công nợ</string>
+                </attribute>
+                <widget class="QTableView" name="tableView_listDebt">
+                 <property name="geometry">
+                  <rect>
+                   <x>400</x>
+                   <y>20</y>
+                   <width>441</width>
+                   <height>211</height>
+                  </rect>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::CustomContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>400</x>
+                   <y>0</y>
+                   <width>151</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Danh sách công nợ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QPushButton" name="pushButton_createDebt">
+                 <property name="geometry">
+                  <rect>
+                   <x>310</x>
+                   <y>110</y>
+                   <width>75</width>
+                   <height>30</height>
+                  </rect>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton
+{
+	background-color:rgb(255, 255, 255);
+	border-style : solid;
+	border-width : 1px;
+	border-radius : 6px;
+	padding : 2px;
+	border : 1px solid rgb(255, 170, 0);
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px solid rgb(68, 68, 68);
+	outline : 0;
+}
+QPushButton:pressed
+{
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Tạo</string>
+                 </property>
+                </widget>
+                <widget class="QTableView" name="tableView_openCourse">
+                 <property name="geometry">
+                  <rect>
+                   <x>-1</x>
+                   <y>250</y>
+                   <width>761</width>
+                   <height>265</height>
+                  </rect>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::NoFocus</enum>
+                 </property>
+                 <property name="contextMenuPolicy">
+                  <enum>Qt::CustomContextMenu</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAsNeeded</enum>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                </widget>
+                <widget class="QLabel" name="label_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>230</y>
+                   <width>291</width>
+                   <height>16</height>
+                  </rect>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Danh sách các học phần đang mở&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+                <widget class="QWidget" name="layoutWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>70</y>
+                   <width>284</width>
+                   <height>107</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QWidget" name="widget" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_4">
+                     <item>
+                      <widget class="QLabel" name="label_2">
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mã học phần&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Công nợ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Năm học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">QLineEdit
+{
+	padding-left : 10px;
+	border-radius : 4px;
+	border : 1px solid;
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_5">
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_id">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_debt">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_semester">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="layoutWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>10</y>
+                   <width>195</width>
+                   <height>33</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Năm học :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_debt">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+                <widget class="QWidget" name="verticalLayoutWidget_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>760</x>
+                   <y>280</y>
+                   <width>109</width>
+                   <height>69</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item alignment="Qt::AlignHCenter">
+                   <widget class="QLabel" name="label_14">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+                    </property>
+                    <property name="text">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Năm học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item alignment="Qt::AlignHCenter">
+                   <widget class="QComboBox" name="comboBox_course">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_13">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Preferred</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>5</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">height : 25</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>1</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="pushButton_teacher">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>180</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Quản lý giảng viên</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../projectQt5/image.qrc">
+                    <normaloff>:/icon-file/information_icon.png</normaloff>:/icon-file/information_icon.png</iconset>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_student">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>180</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Quản lý sinh viên</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../projectQt5/image.qrc">
+                    <normaloff>:/icon-file/result_learingng.png</normaloff>:/icon-file/result_learingng.png</iconset>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_updateInfor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>180</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-style : groove;
+border-width : 2px;
+border-radius : 6px;
+padding : 2px;
+</string>
+                  </property>
+                  <property name="text">
+                   <string>Quản lý học phần</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../projectQt5/image.qrc">
+                    <normaloff>:/icon-file/updated_standard.png</normaloff>:/icon-file/updated_standard.png</iconset>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_5">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Preferred</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>300</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_t" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>760</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>350</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{border : 1px solid;background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>13</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QWidget" name="verticalWidget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>350</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>120</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:rgb(170, 170, 127);
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+	background-color:white;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+	background-color:rgb(170, 170, 127);
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+	border : 1px solid rgb(129, 129, 129);
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color: rgb(170, 170, 127);
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-background-color : red;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-background-color : red;
+	selection-color:black;
+}
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+
+
+
+</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="spacing">
+                 <number>10</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="horizontalWidget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignRight">
+                    <widget class="QLabel" name="label_12">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 170, 0);
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="horizontalWidget1" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>300</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_11">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_9">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../projectQt5/image.qrc">:/icon-file/subject_standard.png</pixmap>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+                    <widget class="QComboBox" name="comboBox_subject">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>230</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="horizontalWidget2" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_10">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../projectQt5/image.qrc">:/icon-file/semester_standard.png</pixmap>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                    <widget class="QComboBox" name="comboBox_yearSch">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>107</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:white;</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>30</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item alignment="Qt::AlignLeft">
+                    <widget class="QPushButton" name="pushButton_xem">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>80</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton
+{
+	background-color:rgb(255, 255, 255);
+	border-style : solid;
+	border-width : 2px;
+	border-radius : 6px;
+	padding : 2px;
+	border : 2px solid rgb(255, 170, 0);
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px solid rgb(68, 68, 68);
+	outline : 0;
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px solid rgb(162, 108, 0);
+	outline : 0;
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px solid rgb(162, 108, 0);
+	outline : 0;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>XEM</string>
+                     </property>
+                     <property name="autoRepeat">
+                      <bool>false</bool>
+                     </property>
+                     <property name="autoDefault">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="horizontalWidget" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignLeft">
+                    <widget class="QLabel" name="label_11">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../projectQt5/image.qrc">:/icon-file/more_options_standard.png</pixmap>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                    <widget class="QComboBox" name="comboBox_options">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color:white;</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_18">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+               </property>
+               <property name="text">
+                <string>Danh sách thời gian mở học phần</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableView" name="tableView_timeRes">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>330</width>
+                 <height>280</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="contextMenuPolicy">
+                <enum>Qt::CustomContextMenu</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+QHeaderView{border:none;border-bottom:1px solid}
+QHeaderView::section{border:none;background-color: rgb(240, 255, 255);border-left-color:black;border-left : 1px solid;}
+QTableView::item{background-color:white;}
+QTableView::item:selected{background-color:#d0d09c;}
+QTableView{border : 1px solid;background-color :rgb(255, 255, 255); selection-background-color: #d0d09c; selection-color: black;border : 1px solid;}
+ QTableView::indicator:unchecked {
+     background-color: rgb(255, 255, 255);
+ }
+QScrollBar:horizontal {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 0px 15px 0 15px;
+	height:15px;
+}
+QScrollBar::handle:horizontal 
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+	height:15px;
+	width:50px;
+	min-width:50px;
+	max-width:50px
+}
+
+QScrollBar::sub-line:horizontal {
+	border:none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-bottom-left-radius :0px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal 
+{	
+	border : none;
+	width : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-right-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:horizontal,QScrollBar::right-arrow:horizontal
+{
+	background-color : none;
+}
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal
+{
+	background-color : none;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 15px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius : 7px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 0px;
+	border-top-right-radius : 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 0px;
+	border-bottom-right-radius : 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}</string>
+               </property>
+               <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarAsNeeded</enum>
+               </property>
+               <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarAsNeeded</enum>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::SingleSelection</enum>
+               </property>
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacerP">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_19">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{border : 0px;background-color: rgb(255, 170, 0);}</string>
+               </property>
+               <property name="text">
+                <string>Tạo thời hạn đăng kí mới</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>330</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QFrame{background-color:white;border : 1px solid;}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QPushButton" name="pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>110</x>
+                  <y>100</y>
+                  <width>121</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton
+{
+	background-color:white;
+	border : 2px groove rgb(255, 170, 0);
+	border-radius : 10px;
+	height : 30;
+	width : 150;
+}
+QPushButton:hover
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+}
+QPushButton:pressed
+{
+	background-color: rgb(255, 170, 0);
+	border:1px groove rgb(68, 68, 68);
+}
+QPushButton:focus
+{
+	background-color: rgb(255, 170, 0);
+	border:2px groove rgb(68, 68, 68);
+	outline : 0;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Tạo</string>
+                </property>
+               </widget>
+               <widget class="QComboBox" name="comboBox_2">
+                <property name="geometry">
+                 <rect>
+                  <x>90</x>
+                  <y>160</y>
+                  <width>107</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>107</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QComboBox
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	selection-background-color :rgb(255, 170, 0);
+	background-color:white;
+    selection-color: black;
+    color: black;
+    border-style: solid;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: 6;
+    padding: 1px 0px 1px 20px;
+}
+
+
+QComboBox:hover
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+QComboBox:focus
+{
+	border:2px solid rgb(255, 170, 0);
+    color: black;
+	outline : none;
+}
+
+
+QComboBox:on
+{
+	border-radius : 5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    selection-background-color: rgb(255, 170, 0);
+	color: black;
+	selection-color :black;
+}
+
+QComboBox:!on
+{
+    color: black;
+}
+
+QComboBox QAbstractItemView
+{
+	border: 2px solid darkgray;
+	background-color:white;
+    selection-color: black;
+    selection-background-color: rgb(255, 170, 0);
+	outline : 0;
+}
+
+QComboBox::drop-down
+{
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     color: white;
+     border-left-width: 0px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 6px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 6px;
+     padding-left: 10px;
+ }
+
+QComboBox::down-arrow
+{
+     width: 7px;
+     height: 5px;
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	border : 1px groove rgb(108, 108, 108);
+	background-color: rgb(170, 170, 127);
+	color : black;
+	selection-color:black;
+}
+QComboBox QAbstractItemView::item
+{
+	border : 1px groove rgb(108, 108, 108);
+	color : black;
+	selection-color:black;
+}
+
+QScrollBar:vertical {
+    border: none;
+	background-color: rgb(170, 170, 127);
+    margin: 15px 0 15px 0;
+	border-radius :0px;
+	width : 10px;
+}
+QScrollBar::handle:vertical
+{
+	border : none;
+	background-color: rgb(255, 170, 0);
+	border-radius :4px;
+}
+
+QScrollBar::sub-line:vertical {
+	border:none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-top-left-radius : 4px;
+	border-top-right-radius : 4px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical
+{	
+	border : none;
+	height : 15px;
+	background-color: rgb(170, 170, 127);
+	border-bottom-left-radius : 4px;
+	border-bottom-right-radius : 4px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::left-arrow:vertical,QScrollBar::right-arrow:vertical
+{
+	background-color : none;
+}
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+	background-color : none;
+}
+
+</string>
+                </property>
+               </widget>
+               <widget class="QWidget" name="widget" native="true">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>10</y>
+                  <width>262</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="widget" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{background-color: rgb(255, 170, 0);border:none}
+QLineEdit
+{
+	padding-left : 10px;
+	border-radius : 4px;
+	border : 1px solid;
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+</string>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLabel" name="label_15">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 170, 0);border:none</string>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Năm học&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_year">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::StrongFocus</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit
+{
+	padding-left : 10px;
+	border-radius : 4px;
+	border : 1px solid;
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{background-color: rgb(255, 170, 0);border:none}
+QLineEdit
+{
+	padding-left : 10px;
+	border-radius : 4px;
+	border : 1px solid;
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+</string>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="label_16">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(255, 170, 0);border:none</string>
+                      </property>
+                      <property name="text">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Thời gian &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="lineEdit_timeRes">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::StrongFocus</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QLineEdit
+{
+	padding-left : 10px;
+	border-radius : 4px;
+	border : 1px solid;
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit:hover
+{
+	border : 1px solid rgb(255, 170, 0);
+}
+QLineEdit:focus
+{
+	border : 1px solid rgb(255, 170, 0);
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QLabel" name="label_17">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>160</y>
+                  <width>80</width>
+                  <height>29</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>80</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 170, 0);border:none</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lọc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacerL">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>30</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Preferred</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>80</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1350</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Lựa chọn</string>
+    </property>
+    <addaction name="actionTh_ng_tin_sinh_vi_n"/>
+    <addaction name="actionK_t_qua_ho_c_t_p"/>
+    <addaction name="actionLi_ch_ho_c"/>
+    <addaction name="actionLi_ch_thi"/>
+    <addaction name="actionThoa_t"/>
+    <addaction name="action_i_m_t_kh_u"/>
+    <addaction name="actionKh_i_ng_l_i"/>
+    <addaction name="actionThoa_t_2"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>Sinh Viên</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QToolBar
+{
+	border : none;
+	background-color: rgb(147, 220, 220);
+}
+QToolBar::handle
+{
+	width : 6px;
+	border-top-right-radius : 10px;
+	border-bottom-right-radius : 10px;
+	background-color: rgb(255, 170, 0);
+	border : 2px groove rgb(255, 170, 0);
+}
+QToolButton:hover
+{
+	border : 1px solid rgb(94, 94, 94);
+	background-color: rgb(255, 170, 0);
+	border-radius :5px;
+}
+QToolButton:pressed
+{
+	border : 1px solid rgb(94, 94, 94);
+	background-color: rgb(255, 170, 0);
+	border-radius :5px;
+}</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTh_ng_tin_sinh_vi_n"/>
+   <addaction name="actionK_t_qua_ho_c_t_p"/>
+   <addaction name="actionLi_ch_ho_c"/>
+   <addaction name="actionLi_ch_thi"/>
+   <addaction name="actionThoa_t"/>
+   <addaction name="action_i_m_t_kh_u"/>
+   <addaction name="actionThoa_t_2"/>
+  </widget>
+  <action name="actionTh_ng_tin_sinh_vi_n">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/icons8-student-center-100.png</normaloff>:/icon-file/icons8-student-center-100.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quản lý giảng viên</string>
+   </property>
+  </action>
+  <action name="actionK_t_qua_ho_c_t_p">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/student_icon.png</normaloff>:/icon-file/student_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quản lý sinh viên</string>
+   </property>
+  </action>
+  <action name="actionLi_ch_ho_c">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/regis_standard.png</normaloff>:/icon-file/regis_standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quản lý học phần</string>
+   </property>
+  </action>
+  <action name="actionLi_ch_thi">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icon-file/debtandstudent.png</normaloff>:/icon-file/debtandstudent.png</iconset>
+   </property>
+   <property name="text">
+    <string>Học phần và công nợ</string>
+   </property>
+  </action>
+  <action name="actionThoa_t">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/debt_student_standard.png</normaloff>:/icon-file/debt_student_standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Công nợ sinh viên</string>
+   </property>
+  </action>
+  <action name="actionThoa_t_2">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/remove-button-standard.png</normaloff>:/icon-file/remove-button-standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Thoát</string>
+   </property>
+  </action>
+  <action name="action_i_m_t_kh_u">
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/result_pic_standard.png</normaloff>:/icon-file/result_pic_standard.png</iconset>
+   </property>
+   <property name="text">
+    <string>Điểm sinh viên</string>
+   </property>
+  </action>
+  <action name="actionKh_i_ng_l_i">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../projectQt5/image.qrc">
+     <normaloff>:/icon-file/course_icon.png</normaloff>:/icon-file/course_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Học phần đăng kí</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

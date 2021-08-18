@@ -1,0 +1,130 @@
+background-image: url(:/logo_form.jpg); // set background image for widget
+font: 8pt "Courier";
+Linux FireWall CCNA
+C++, Java, Kotlin, Flutter
+
+QT5:  QPalette, QPoint, QToolTip
+
+class Person.
+class Employee:public Person.
+
+ostream &operator<<(ostream& out,const Employee &e)
+{
+	cout<<(Person)e; //để hiển thị dữ liệu đồng thời ra màn hình các thông tin ở class Person và thông tin class Employee
+	out<<"Ma Nhan Vien : "<<e.maNhanVien<<"\n";
+	out<<"Gioi Tinh : "<<e.gioiTinh<<"\n";
+	return out;
+}
+
+//Qt5.QSqlQuery
+qDebug()<<"ahihidongoc";
+    qDebug()<<"Username :"<<USERNAME;
+    qDebug()<<"Password :"<<PASSWORD;
+    QSqlQuery query;
+    query.prepare("SELECT * FROM Student_DATABASE WHERE USERNAME = :username AND PASSWORD = :password");
+    query.bindValue(0,USERNAME);
+    query.bindValue(1,PASSWORD);
+    query.exec();
+    query.first(); //nếu không có dòng này thì query sẽ không thể excute chính xác bởi vì output ra chỉ ra đúng 1 dòng.
+    if (query.value(8).toString() == USERNAME && query.value(9).toString() == PASSWORD)
+    {
+            ui->label_name->setText("Họ tên : " + query.value(1).toString());
+            ui->label_email->setText("Email : " + query.value(4).toString());
+            ui->label_sex->setText("Giới tính : " + query.value(5).toString());
+            ui->label_phonenumber->setText("Số Điện Thoại : " + query.value(6).toString());
+            ui->label_datebirth->setText("Ngày Sinh : " + query.value(11).toString());
+            ui->label_cmnd->setText("Cmnd : " + query.value(10).toString());
+            ui->label_mssv->setText("Mã Sinh Viên : " + query.value(0).toString());;
+            ui->label_major->setText("Ngành : " + query.value(3).toString());
+            qDebug()<<"EQUAL TO";
+    }
+    else
+    {
+        qDebug()<<"NOT EQUAL TO";
+    }
+
+//Qt5.QSqlQuery
+QSqlQuery query;
+    query.prepare("SELECT * FROM Student_DATABASE");
+    while (query.next())
+    {
+            if (query.value(8).toString() == USERNAME && query.value(9).toString() == PASSWORD)
+            {
+                    ui->label_name->setText("Họ tên : " + query.value(1).toString());
+                    ui->label_email->setText("Email : " + query.value(4).toString());
+                    ui->label_sex->setText("Giới tính : " + query.value(5).toString());
+                    ui->label_phonenumber->setText("Số Điện Thoại : " + query.value(6).toString());
+                    ui->label_datebirth->setText("Ngày Sinh : " + query.value(11).toString());
+                    ui->label_cmnd->setText("Cmnd : " + query.value(10).toString());
+                    ui->label_mssv->setText("Mã Sinh Viên : " + query.value(0).toString());;
+                    ui->label_major->setText("Ngành : " + query.value(3).toString());
+                    qDebug()<<"EQUAL TO";
+            }
+    }
+
+
+
+//void keyReleaseEvent(QKeyEvent *event)
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    event->accept();
+    if (event->key() == Qt::Key_Up)
+    {
+        this->focusPreviousChild();
+    }
+}
+
+void keyReleaseEvent(QKeyEvent *event) override;
+void closeEvent(QCloseEvent *event) override;
+
+
+
+how to add gif picture to label in Qt5 and how to create loading gif and more ....more
+
+HOW TO CREATE A BUTTON TO ADD TO QMESSAGEBOX----and QPushButton cũng giống như QAbstractButton
+QMessageBox msg;
+QAbstractButton* buttonYes = msg.addButton(tr("Có"),QMessageBox::YesRole);
+QAbstractButton* buttonNo = msg.addButton(tr("Không"),QMessageBox::NoRole);
+QPushButton* buttonYes = msg.addButton(tr("Có"),QMessageBox::YesRole);
+QPushButton* buttonNo = msg.addButton(tr("Không"),QMessageBox::NoRole);
+msg.exec();
+if(msg.clickedButton() == buttonYes)
+{
+  this->close(;
+  qDebug()<<"It runs";
+}
+
+
+
+QString date_birth = ui->label_currtime->text();
+QDate date = QDate::fromString(date_birth,"dd-MM-yyyy");
+date_birth = date.toString("yyyy-MM-dd");
+date = date.addDays(1);
+qDebug()<<date.toString("dd-MM-yyyy");
+qDebug()<<ui->label_currtime->text();
+ui->label_currtime->setText(date.toString("dd-MM-yyyy"));
+
+
+QObject::connnect();
+TH1 : QObject::connect(ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(tabSelected()));
+TH2 : QObject::connect(calendar,&QCalendarWidget::selectionChanged, this, &Student_Interactive_Interface::onSelectionChanged);
+TH3 : QObject::connect(calendar, &QCalendarWidget::clicked, this, [=](const QDate & date) {qDebug() << "Data is" << date.toString("dd-MM-yyyy");});
+//danh sách các tham số nếu có sẽ được để trong dấu ngoặc tròn.
+
+qDebug()<<ui->tableView_registerCourse->model()->data(index); //hiển thị data tại index(row,column);
+qDebug()<<ui->tableView_registerCourse->model()->index(index.row(),1).data().toString();//hiển thị dữ liệu tại column 1 với row index.row()
+
+////////////////////////////insert data to cell at index.
+QModelIndex inn = tableModel->index(2,0,QModelIndex());
+tableModel->setData(inn,name);
+
+//insert row
+tableModel->insertRow(2);
+ui->tableView_registerCourse->model()->insertRow(2);
+
+//random trong C++ sử dụng thư viên random
+    random_device rd;
+    mt19937_64 rnd(rd()); // sinh số 64bit 
+    uniform_int_distribution<int> uni(1,10); // giới hạn miền giá trị
+    auto a = uni(rnd); // sinh số
+    cout<<a;
